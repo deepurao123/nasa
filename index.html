@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>nasa</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+        /* font-family: 'Michroma', sans-serif; */
+        .source {
+            font-family: 'Michroma', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .root {
+            --black: #000000;
+        }
+
+        .bg-black {
+            background: var(--black);
+        }
+
+        #nasa-logo {
+            height: 3rem;
+            width: 15.5rem;
+        }
+
+        .outline {
+            border: 1px solid #fff;
+        }
+
+        .outline:hover {
+            border: none;
+            background: #0d6efd;
+        }
+
+        .navbar-toggler-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .offcanvas {
+            background-color: #212529 !important;
+            color: #fff;
+        }
+
+        .btn-close {
+            background-color: #fff !important;
+        }
+
+        .bi::before,
+        [class^="bi-"]::before,
+        [class*=" bi-"]::before {
+            display: inline;
+            color: #fff;
+        }
+
+        .carousel-item {
+            height: 100vh;
+        }
+
+        .carousel-caption {
+            bottom: 18rem;
+            color: #fff;
+        }
+
+        .carousel-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            right: 15%;
+            top: 40%;
+            left: 15%;
+            padding-top: 1.25rem;
+            padding-bottom: 16rem;
+            text-align: center;
+            align-items: center;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            transition: all 0.5s ease;
+            background-color: rgba(58, 29, 29, 0.3);
+            text-align: center;
+        }
+
+        .card-img-top1 {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.5s linear;
+
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.2);
+        }
+
+        .card.shadow {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .text {
+            background-color: #fff;
+        }
+
+        .row:after {
+            display: table;
+            content: " ";
+        }
+
+        .section-header .section-header__title:after {
+            content: "";
+            display: block;
+            width: 108px;
+            height: 3px;
+            background: #90702f;
+            margin: 28px auto;
+        }
+
+        h2 {
+            font-weight: 300;
+            padding-top: 3rem;
+        }
+
+        .latest-news .preheader {
+            font-family: 'Source Serif 4', serif;
+            font-size: 16px;
+            display: block;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-family: 'Source Serif 4', serif;
+            font-weight: 700;
+        }
+
+        .card-link {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-weight: inherit !important;
+        }
+
+        .rounded-pill {
+            padding: 10px 30px;
+            /* border: 1px solid #0d6efd; */
+        }
+
+        .rounded-pill:hover {
+            background-color: #fff;
+            color: #0d6efd;
+        }
+
+        .scroll-down {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzOC44IDIyLjciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDM4LjggMjIuNyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojNTM2N0Y4O30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0ibTAuOCA1LjVsMTYuMiAxNi4yYzEuMSAxLjIgMi45IDEuNCA0LjIgMC4zbDAuMy0wLjMgMTYuMy0xNi4yYzEuMi0xIDEuNC0yLjkgMC4zLTQuMS0wLjEtMC4xLTAuMi0wLjMtMC4zLTAuNC0xLjEtMS4yLTIuOS0xLjQtNC4yLTAuM2wtMC4zIDAuMy0xMi43IDEzYy0wLjcgMC43LTEuOCAwLjctMi41IDAuMWwtMC4xLTAuMWMtMS4yLTEuMy0xMi40LTEzLTEyLjQtMTMtMS4zLTEuMy0zLjQtMS4zLTQuNy0wLjFsLTAuMSAwLjFjLTEuMSAxLjMtMS4xIDMuMiAwIDQuNXoiLz4KPC9zdmc+Cg==);
+            background-repeat: no-repeat;
+            -webkit-background-size: 38px 38px;
+            background-size: 38px;
+            background-position: 50% 31%;
+            left: 45%;
+            top: -19%;
+            z-index: 9;
+        }
+
+        .scroll-down:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: -13px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+
+        .section-header__title:after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 3px;
+            background: #90702f;
+            margin: 28px auto;
+        }
+
+        .col a {
+            text-decoration: none;
+        }
+
+        .col a:hover {
+            text-decoration: underline;
+        }
+
+        .img1-1 {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .img1 {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.5s linear;
+        }
+
+        .img1:hover {
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+
+        /* 
+        .border {
+            outline: none !important;
+        }
+
+        .border:hover {
+            outline: 3px solid #0d6efd !important; */
+        /* }
+
+        .link a {
+            text-decoration:; */
+        /* }
+
+        .link a:hover {
+            text-decoration: underline; */
+
+
+
+        .carousel-indicators [data-bs-target] {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 35%;
+            width: 100%;
+            transition: all 0.5s ease;
+            background-color: rgba(58, 29, 29, 0.4);
+            text-align: center;
+        }
+
+        .images {
+            display: block;
+            width: 416px;
+            height: 430px;
+            object-fit: cover;
+        }
+
+        .deepu {
+            width: 416px;
+            height: 430px;
+        }
+
+        .button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.5s ease;
+            background: #0d6efd;
+        }
+
+        .deepu:hover .button {
+            opacity: 1;
+            height: 35%;
+        }
+
+        .button-hover {
+            border-radius: 40px;
+            font-size: 16px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.5s;
+            border: 2px solid #fff;
+            color: #fff !important;
+        }
+
+        .button-hover:hover {
+            background-color: #fff;
+            color: #000000 !important;
+            /* border: 2px solid #000; */
+
+        }
+
+        .site-footer hr {
+            border-top-color: #ceacac;
+            opacity: 0.5;
+        }
+
+        .site-footer hr.small {
+            margin: 20px 0;
+            /* }
+
+        .site-footer p {
+            color: #fff;
+            font-size: 16px;
+            margin-top: 5px;
+            letter-spacing: 2px; */
+        }
+
+        .site-footer a {
+            color: #737373;
+        }
+
+        .site-footer a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .footer-links li {
+            display: block;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        .site-footer .social-icons a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d;
+        }
+
+        .copyright-text {
+            margin: 0;
+        }
+
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .social-icons a {
+            background-color: #eceeef;
+            color: #818a91;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            outline: 1px solid #fff;
+
+        }
+
+        .social-icons a.facebook:hover {
+            background-color: blue;
+        }
+
+        .social-icons a.twitter:hover {
+            background-color: blue;
+        }
+
+        .social-icons a.linkedin:hover {
+            background-color: blue;
+        }
+
+        .social-icons a.dribbble:hover {
+            background-color: blue;
+        }
+
+        .modal-content {
+            width: 75% !important;
+        }
+
+        input[type="submit"] {
+            width: 8rem;
+            height: 40px;
+            display: block;
+            margin: auto;
+            font-size: 20px;
+            font-weight: 700;
+            color: #0d6efd;
+            border-radius: 10px;
+            border: none;
+            transition: all 0.5s;
+        }
+
+        input[type="submit"]:hover {
+            color: #fff;
+            background-color: #000000;
+        }
+
+        #searchNodeType {
+            width: 100%;
+            height: 2.5rem;
+            color: #0d6efd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        #searchMethod {
+            width: 100%;
+            height: 2.5rem;
+            color: #0d6efd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .policy a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .policy a:hover {
+            text-decoration: underline;
+        }
+
+        .read-more {
+            padding: 7px 20px;
+            font-size: 12px;
+            background: #2196F3;
+            color: #ffffff;
+            border-radius: 25px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+
+        .read-more:hover {
+            background: #fff;
+            color: #2196F3;
+            outline: 1px solid #0d6efd;
+        }
+
+        .owl-carousel.owl-drag .owl-item {
+            padding: 10px;
+        }
+
+        .post-content {
+            padding: 10px;
+        }
+
+        .post-content a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .body-height {
+            height: 170px;
+        }
+
+        .justify {
+            text-align: justify;
+        }
+
+        .height1 {
+            height: 200px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 80px;
+            left: 2%;
+        }
+
+        .logo2 {
+            width: 280px;
+            height: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand navbar-brand mx-sm-0" href="#"><img src="images/nasa-logo.png" id="nasa-logo"
+                        alt="nasa-logo"></a>
+                <!-- <button class="navbar-toggler d-sm-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>menu
+            </button> -->
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">Home <span
+                                    class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">News+</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Images+</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Videos+</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Science+</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Contact Us</a>
+                        </li>
+                        <form class="d-flex my-2 my-lg-0 d-sm-block">
+                            <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        </form>
+                    </ul>
+                </div>
+                <button class="btn btn-outline-success outline my-2 my-sm-0 d-sm-block pe-2 me-md-4 me-0" type="button"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                        class="bi bi-search pe-2"></i></i><span
+                        class="d-none d-md-inline-block text-light source">search</span></button>
+                <button class="btn btn-outline-success outline my-2 my-sm-0  d-sm-block" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i
+                        class="bi bi-list pe-2"></i><span
+                        class="d-none d-md-inline-block text-light source">menu</span></button>
+            </div>
+        </nav>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <video autoplay loop muted>
+                        <source src="video/videoplayback.mp4" type="video/mp4">
+                    </video>
+                    <!-- <iframe src="https://www.youtube.com/embed/MJDh-BnnIps?si=7MqGnv2DFf3rl4PE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe> -->
+                    <!-- <img src="images/NASA.webp" class="d-block w-100 " alt="..."> -->
+                    <div class="overlay">
+                        <div class="carousel-caption ">
+                            <p class="display-1 fw-bold d-none d-md-block source">Hubble Space Telescope</p>
+                            <p class="display-6 fw-bold d-block d-md-none source">Hubble Space Telescope</p>
+                            <p class=" h2 pt-3 d-none d-md-block source">Embark on a Journey of Discovery</p>
+                        </div>
+                    </div>
+                    <div class="logo">
+                        <img src="images/logo.png" alt="logo" class="logo2">
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main>
+        <div class="container-fulid p-0">
+            <div class="container position-relative">
+                <div class="row bg-black">
+                    <div class="col d-none d-lg-block">
+                        <div class="scroll bg-black">
+                            <a href="#top" class="scroll-down"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="section-header col-12 text-center">
+                        <h2 class="section-header__title source" id="top">
+                            Latest News</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="preheader preheader--news-promo-header">
+                            <div class="preheader__item text-center fw-bold source">july 29, 2023</div>
+                        </div>
+                        <h3 class="content-prev__head mb-2 text-center mt-3 source">
+                            <a href="/contents/news-releases/2023/news-2023-016" title="" class="card-link">
+                                NASA's Hubble Hunts for Intermediate-Sized Black Hole Close to Home</a>
+                        </h3>
+                        <button class="btn btn-primary d-flex justify-content-center m-auto mt-4 rounded-pill fw-bold"
+                            type="button">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fulid p-0 mt-5">
+            <div class="container text-center pt-5 pb-5 text-light">
+                <div class="row">
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow">
+                            <div class="card-img-top1">
+                                <img src="images/STScI-01H14T8GQPT0AXGZ0EA5XYQSHS.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <!-- <img src="images/STScI-01H14T8GQPT0AXGZ0EA5XYQSHS.jpg" class="card-img-top" alt="..."> -->
+                            <div class="card-body">
+                                <h5 class="card-title">July 27, 2023</h5>
+                                <p class="card-text h3 pt-2 pb-2">Hubble Sees Evaporating Planet Getting the
+                                    Hiccups to Home</p>
+                                <a href="#" class="btn btn-primary fw-bold rounded-pill ">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow">
+                            <div class="card-img-top1">
+                                <img src="images/STScI-01H532VEZKDPQ988XAP8EKY1RV.png" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">July 20, 2023</h5>
+                                <p class="card-text h3 pt-2 pb-2">Hubble Sees Boulders Escaping from
+                                    Asteroid Dimorphos</p>
+                                <a href="#" class="btn btn-primary fw-bold rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mt-3 mt-md-0">
+                        <div class="card shadow">
+                            <div class="card-img-top1">
+                                <img src="images/STScI-01H0N45Q7HHZS0CF13P48JPY99.png" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">May 23, 2023</h5>
+                                <p class="card-text h3 pt-2 pb-2">NASA's Hubble Hunts for Intermediate-Sized Black Hole
+                                    Close
+                                    to Home
+                                </p>
+                                <a href="#" class="btn btn-primary fw-bold rounded-pill">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fulid p-0 pb-5 bg-light">
+            <div class="container">
+                <div class="row ">
+                    <div class="col text-center text-dark">
+                        <h2 class="section-header__title source">
+                            Announcements</h2>
+                    </div>
+                </div>
+                <div class="row mt-2 bg-dark border ">
+                    <div class="col-md-4 p-0">
+                        <div class="img1-1">
+                            <img src="images/NQRzVz58E3xE3i4Jvopew5.jpg" class="img-fluid  img1" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body text-light mt-4 ms-2">
+                            <p class="h4 fw-bold cursor-pointer source"><a href="#" class="text-light">Monthly
+                                    Tonight's
+                                    Sky:July
+                                    Video Now Available</a></p>
+                            <p class="lead">Learn more about the constellations you can observe in the night sky during
+                                the
+                                month of June.<br><span class="link fw-bold source"><a href="#">Watch the Video<i
+                                            class="bi bi-arrow-right-short"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 bg-dark border">
+                    <div class="col-md-4 p-0">
+                        <div class="img1-1">
+                            <img src="images/HST-SM4.jpeg" class="img-fluid  img1" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body text-light mt-4 ms-2">
+                            <p class="h4 fw-bold cursor-pointer source"><a href="#" class="text-light">The Summer
+                                    Season of
+                                    NASA's
+                                    Astrophoto
+                                    Challenges is
+                                    here!</a></p>
+                            <p class="lead">Learn more about the constellations you can observe in the night sky during
+                                the
+                                month of June.<br><span class="link fw-bold source"><a href="#">Enter Today<i
+                                            class="bi bi-arrow-right-short"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row bg-dark mt-5 border">
+                    <div class="col-md-4 p-0">
+                        <div class="img1-1">
+                            <img src="images/3.jpg" class="img-fluid img1" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body text-light mt-4 ms-2">
+                            <p class="h4 fw-bold cursor-pointer source"><a href="#" class="text-light">Introducing
+                                    Hubble’s
+                                    ULLYSES
+                                    Program</a></p>
+                            <p class="lead">Learn more about the constellations you can observe in the night sky during
+                                the
+                                month of June.<br><span class="link fw-bold source"><a href="#">Learn More<i
+                                            class="bi bi-arrow-right-short"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fulid p-0">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col text-center">
+                        <p class="section-header__title source h2">
+                            Hubble Favorites</p>
+                        <a href="#" class="source fw-bold h5 text-primary">View all Hubble Favorites</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fulid">
+            <div class="container">
+                <section id="demos">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="owl-carousel">
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa6.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source ">
+                                                <a href="#">Hubble's Nebulae</a>
+                                            </h3>
+                                            <p class="source">Learn about some of hubble's most exciting
+                                                scientific
+                                                discoveries.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa2.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source">
+                                                <a href="#">Hubble's Deep Fields</a>
+                                            </h3>
+                                            <p class="source">Look back in space and time through billions
+                                                of years
+                                                of
+                                                galaxy evolution.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa3.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source ">
+                                                <a href="#">Hubble's Galaxies</a>
+                                            </h3>
+                                            <p class="source ">These collections of
+                                                stars,planets,gas,dust,and dark
+                                                matter are the visible foundation of the universe.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa4.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source">
+                                                <a href="#">Hubble's Universe Videos</a>
+                                            </h3>
+                                            <p class="source">Take a video journey through Hubble
+                                                breakthroughs
+                                                over
+                                                there decades in the short series.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa5.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source">
+                                                <a href="#">Hubble's Star Clusters</a>
+                                            </h3>
+                                            <p class="source">Hubble's observations of star clusters help
+                                                us better
+                                                understand how stars form amnd evolve.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card ">
+                                        <div class="card-img-top1">
+                                            <img src="images/nasa1.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                        <div class="card-body body-height">
+                                            <h3 class="source">
+                                                <a href="#">Why a Space Telescope?</a>
+                                            </h3>
+                                            <p class="source">Form its orbit around Earth,Hubble has
+                                                revealed a
+                                                previously hidden universe.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <script>
+                    $('.owl-carousel').owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        // nav: true,
+                        autoplay: true,
+                        autoplayTimeout: 2000,
+                        autoplayHoverPause: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 3
+                            }
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+        <div class="container-fulid p-0">
+            <div class="container p-0">
+                <div class="row pt-5">
+                    <div class="col text-center">
+                        <p class="section-header__title source h2">
+                            Resources</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/cats-eye.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Hubble Science</p>
+                                    <p class="lead source">Open new doors to the universe with Hubble’s
+                                        discoveries</p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold">Explore The
+                                        Science</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/hs.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Quick Facts</p>
+                                    <p class="lead source">Get answers to the most frequently asked questions
+                                        about
+                                        Hubble
+                                    </p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold">Get The Facts</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/hs1.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Hubble Mission</p>
+                                    <p class="lead source">Learn about the mission of the Hubble Space Telescope
+                                    </p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold"> About The
+                                        Mission</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/hs2.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Collaborating Missions</p>
+                                    <p class="lead source">Discover how Hubble partners with the astronomy
+                                        community
+                                    </p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold">Discover The
+                                        Partners</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/hs3.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Recursos en español</p>
+                                    <p class="lead source">Explore las traducciones al español de los recursos
+                                        sobre el
+                                        Hubble más populares</p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold">Explore The
+                                        Science</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="deepu position-relative">
+                            <img src="images/hubble.jpg" class="images" alt="...">
+                            <div class="overlay">
+                                <div class="text text-light pt-3">
+                                    <p class="h3 source fw-bold">Learning Resources</p>
+                                    <p class="lead source">Find resources for learning and teaching others about
+                                        Hubble
+                                        science</p>
+                                </div>
+                                <div class="button">
+                                    <button class=" btn text-dark button-hover fw-bold">Stem Resources</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col text-center">
+                        <p class="section-header__title source h2">
+                            What is Hubble Looking at Now?</p>
+                        <a href="#" class="source fw-bold h5 text-primary pb-5">Visit Space Telescope Live</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                menu
+            </button> -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Home <span
+                                class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">News+</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Images+</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Videos+</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Science+</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0 ">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                </form>
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo">Open modal for @mdo</button> -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content bg-dark">
+                    <!-- <div class="modal-header">
+                    </div> -->
+                    <div class="modal-body text-light">
+                        <form>
+                            <input name="search" placeholder="Enter Search Terms" id="searchTerm" type="text"
+                                class="form-control" value="" autocomplete="off">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Search Method</label>
+                                <br>
+                                <select name="select" id="searchMethod">
+                                    <option value="all_words">All These Words</option>
+                                    <option value="exact_phrase">This Exact Phrase</option>
+                                    <option value="any_word">Any of These Words</option>
+                                    <option value="as_is">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Content Type</label>
+                                <br>
+                                <select id="searchNodeType" name="src_nodeType">
+                                    <option value="page">Page</option>
+                                    <option value="PressRelease">Press Release</option>
+                                    <option value="Image">Image</option>
+                                    <option value="Video">Video</option>
+                                    <option value="article">Article</option>
+                                    <option value="event">Event</option>
+                                    <option value="file">File</option>
+                                    <option value="searchableContent">All Searchable Content</option>
+                                </select>
+                                <!-- <textarea class="form-control" id="message-text"></textarea> -->
+                            </div>
+                            <input type="submit" value="submit">
+                            <p class="text-center mt-2">This site is protected by reCAPTCHA and the Google
+                                <span class="policy"><a href="#">Privacy Policy</a></span> and <span class="policy"><a
+                                        href="#">Terms of
+                                        Service</a></span> apply.
+                            </p>
+                        </form>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer bg-dark mt-5 p-0">
+        <div class="container pt-3">
+            <div class="row mt-2">
+                <div class="col text-centercol-md-4 mb-4 mb-md-0 text-md-start text-center">
+                    <p class=" h5 text-uppercase source fw-bold text-light">About</p>
+                    <p class="text-light justify">The NASA Hubble Space Telescope is a project of
+                        international
+                        cooperation between NASA and ESA. AURA’s Space Telescope
+                        Science Institute in Baltimore, Maryland, conducts Hubble science operations..</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 ps-none ps-md-5 text-md-start text-center ">
+                    <p class="text-uppercase source fw-bold h5 text-light">Categories</p>
+                    <ul class="footer-links ">
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Mission</a>
+                        </li>
+                        <li>
+                            <a href="#">Explore</a>
+                        </li>
+                        <li>
+                            <a href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Galleries</a>
+                        </li>
+                        <li>
+                            <a href="#">Nasa tv</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0 text-md-start text-center">
+                    <p class="text-uppercase source fw-bold h5 text-light">Quick Links</p>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contribute</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="small">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 text-center text-md-start">
+                    <p class="copyright-text text-light">Space Telescope Science Institute home page</p>
+                </div>
+                <div class="col-12 col-lg-6 text-center text-md-end mt-3 mt-md-0">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="bi bi-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
